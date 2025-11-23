@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Bitlinks - Your Trusted URL Shortener",
+  title: "BitLinks - Your Trusted URL Shortener",
   description: "Shorten, share, and manage your links with ease using Bitlinks.",
 };
 
