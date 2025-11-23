@@ -13,9 +13,9 @@ export default function Home() {
           <p className="px-36 text-center">
             We are the most straightforward URL shortner in the world.Most of the url shortners will track or ask you to give your details for login. we understand your privacy concerns and hence we do not track or ask for any details.
           </p>
-          <div className='flex gap-3 text-white '>
-            <Link href="/shorten"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold'>Try Now</button></Link>
-            <Link href="/generate"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold'>Github</button></Link>
+          <div className='flex gap-3 text-white  '>
+            <Link href="/shorten"><button className='bg-purple-500 cursor-pointer rounded-lg shadow-lg p-3 py-1 font-bold'>Try Now</button></Link>
+            <Link  target="_blank" href="https://github.com/AnkurTechWiz/BitLink"><button className= '  bg-purple-500 rounded-lg cursor-pointer shadow-lg p-3 py-1 font-bold'>Github</button></Link>
 
           </div>
         </div>

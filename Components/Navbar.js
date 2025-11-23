@@ -14,8 +14,8 @@ const Navbar = () => {
                 <Link href="/shorten"><li>Shorten</li></Link>
                 <Link href="/"><li>Contact Us</li></Link>
                 <li className='flex gap-3'>
-                    <Link href="/shorten"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold'>Try Now</button></Link>
-                    <Link href="/generate"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold'>Github</button></Link>
+                    <Link href="/shorten"><button className='bg-purple-500 cursor-pointer rounded-lg shadow-lg p-3 py-1 font-bold'>Try Now</button></Link>
+                    <Link target='_blank' href="https://github.com/AnkurTechWiz/BitLink"><button className='bg-purple-500 cursor-pointer rounded-lg shadow-lg p-3 py-1 font-bold'>Github</button></Link>
 
                 </li>
             </ul>
