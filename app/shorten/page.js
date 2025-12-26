@@ -14,8 +14,8 @@ const Shorten = () => {
         myHeaders.append("Content-Type", "application/json");
 
         const raw = JSON.stringify({
-            "url": url,
-            "shorturl": shorturl
+            "url": url.trim(),
+            "shorturl": shorturl.trim()
         });
 
         const requestOptions = {
@@ -26,15 +26,27 @@ const Shorten = () => {
         };
 
         fetch("/api/generate", requestOptions)
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then((result) => {
+                if (result.success) {
+                    setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl.trim()}`)
+                    alert(result.message)
+                } else {
+                    alert(result.message)
+                }
                 seturl("")
                 setshorturl("")
-                setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)                
                 console.log(result)
-                alert(result.message)
             })
-            .catch((error) => console.error(error));
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Failed to generate short URL. Please try again.');
+            });
     }
 
     return (
