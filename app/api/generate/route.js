@@ -17,8 +17,14 @@ export async function POST(request) {
         return Response.json({ success : false , error : true ,  message: 'Short URL already exists' })
     }   
 
+    // Ensure URL starts with http or https
+    let url = body.url.trim();
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
+
     const result = await collection.insertOne({
-        url: body.url,
+        url: url,
         shorturl: body.shorturl
     })
 
