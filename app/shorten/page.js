@@ -50,8 +50,8 @@ const Shorten = () => {
     }
 
     return (
-        <div className='mx-auto max-w-lg bg-purple-100 my-16 p-8 rounded-lg flex flex-col gap-4'>
-            <h1 className='font-bold text-2xl'>Generate your short URLs</h1>
+        <div className='mx-auto max-w-lg bg-purple-100 my-8 md:my-16 p-4 md:p-8 rounded-lg flex flex-col gap-4'>
+            <h1 className='font-bold text-xl md:text-2xl'>Generate your short URLs</h1>
             <div className='flex flex-col gap-2'>
                 <input type='text'
                     value={url}
@@ -68,7 +68,7 @@ const Shorten = () => {
                 />
                 <button
                     onClick={generate}
-                    className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 my-3 font-bold text-white'>Generate</button>
+                    className='bg-purple-500 rounded-lg shadow-lg p-2 md:p-3 py-1 my-3 font-bold text-white'>Generate</button>
 
             </div>
             {generated && <><span className='font-bold text-lg'>Your Link</span><code><Link target="_blank" href={generated}>{generated}</Link></code></>}
