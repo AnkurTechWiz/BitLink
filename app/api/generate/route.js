@@ -31,9 +31,6 @@ export async function POST(request) {
         return Response.json({ success : true , error : false ,  message: 'URL Generated Successfully' })
     } catch (error) {
         console.error('API Error:', error);
-        return new Response(JSON.stringify({ success: false, error: true, message: 'Internal server error: ' + error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return Response.json({ success: false, error: true, message: 'Internal server error: ' + error.message }, { status: 500 });
     }
 }
